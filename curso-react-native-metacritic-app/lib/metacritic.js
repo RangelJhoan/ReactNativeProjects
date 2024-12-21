@@ -1,6 +1,6 @@
 // Reajustado
 export async function getMyGames() {
-  const MY_GAMES = "https://mocki.io/v1/d77d2b3b-8afa-4378-ac99-96f78e7ffdbc ";
+  const MY_GAMES = "https://mocki.io/v1/d77d2b3b-8afa-4378-ac99-96f78e7ffdbc";
 
   return fetch(MY_GAMES).then((data) => data.json());
 }
