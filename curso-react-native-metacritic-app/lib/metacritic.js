@@ -1,39 +1,12 @@
 // Reajustado
 export async function getMyGames() {
-  const MY_GAMES = "https://mocki.io/v1/d77d2b3b-8afa-4378-ac99-96f78e7ffdbc";
+  const MY_GAMES = "https://mocki.io/v1/148856d5-86c3-4523-8039-c7d6270e5d7f";
 
   return fetch(MY_GAMES).then((data) => data.json());
 }
 
-export async function getGameDetails(slug) {
-  const GAME_DETAILS = `https://internal-prod.apigee.fandom.net/v1/xapi/composer/metacritic/pages/games/${slug}/web?&apiKey=1MOZgmNFxvmljaQR1X9KAij9Mo4xAY3u`;
+export async function getGameDetails(mockio_id) {
+  const MY_GAMES = "https://mocki.io/v1/" + mockio_id;
 
-  const rawData = await fetch(GAME_DETAILS);
-  const json = await rawData.json();
-
-  const { components } = json;
-  const { title, description, criticScoreSummary, images } = components[0];
-  const { score } = criticScoreSummary;
-
-  // get the card image
-  const cardImage = images.find((image) => image.typeName === "cardImage");
-  const { bucketType, bucketPath } = cardImage;
-  const img = `https://www.metacritic.com/a/img/${bucketType}${bucketPath}`;
-
-  const rawReviews = components[3].data.items;
-
-  // get the reviews
-  const reviews = rawReviews.map((review) => {
-    const { quote, score, date, publicationName, author } = review;
-    return { quote, score, date, publicationName, author };
-  });
-
-  return {
-    img,
-    title,
-    slug,
-    description,
-    score,
-    reviews,
-  };
+  return fetch(MY_GAMES).then((data) => data.json());
 }

@@ -13,7 +13,7 @@ import { Link } from "expo-router";
 
 export function GameCard({ game }) {
   return (
-    <Link asChild href={`/${game.slug}`}>
+    <Link asChild href={`/${game.mockio_id}`}>
       <Pressable
         className="active:opacity-70 border border-white active:border-black/50 
         mb-2 bg-gay-500/10 rounded-xl p-4"

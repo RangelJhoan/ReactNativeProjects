@@ -8,16 +8,6 @@ export function Main() {
   const [games, setGames] = useState([]);
   useEffect(() => {
     getMyGames().then((games) => setGames(games));
-
-    /*
-    // Cuando se obtiene de una API en LOCAL se pone la IP
-    const result = fetch("http://192.168.2.9:8080/usuario").then((rawData) => {
-      return rawData.json();
-    });
-
-    result
-      .then((data) => alert(data[0].email))
-      .catch((error) => console.log("Se presentó el error:\n", error));*/
   }, []);
 
   return (

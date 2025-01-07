@@ -5,6 +5,10 @@ export const CircleInfoIcon = (props) => (
   <FontAwesome6 name="circle-info" size={24} {...props} />
 );
 
-export const CircleHomeIcon = (props) => (
+export const HomeIcon = (props) => (
   <FontAwesome name="home" size={24} {...props} />
+);
+
+export const InfoIcon = (props) => (
+  <FontAwesome name="info" size={24} {...props} />
 );

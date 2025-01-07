@@ -1,15 +1,10 @@
 import { Link } from "expo-router";
 import { Pressable, ScrollView, Text } from "react-native";
-import { CircleHomeIcon } from "../components/Icons";
+import { HomeIcon } from "../../components/Icons";
 
 export default function About() {
   return (
     <ScrollView>
-      <Link asChild href="/">
-        <Pressable>
-          <CircleHomeIcon />
-        </Pressable>
-      </Link>
       <Text className="font-bold mb-8 text-2xl">Sobre el proyecto</Text>
       <Text className="mb-4">
         Lorem Ipsum is simply dummy text of the printing and typesetting
